@@ -1,6 +1,3 @@
-#Example use:
-#  titanic_table['pred_1'] = titanic_table.apply(lambda row: predictor_1(row), axis=1)
-#  titanic_table['pred_1_type'] = titanic_table.apply(lambda row: predictor_case(row, pred='pred_1', target='Survived'), axis=1)
 def predictor_case(row, pred, target):
     actual = row[target]
     prediction = row[pred]
@@ -15,17 +12,17 @@ def predictor_case(row, pred, target):
     return case
 
 def f1(cases):
-	#the heart of the matrix
-	tp = cases['true_positive']
-	fn = cases['false_negative']
-	tn = cases['true_negative']
-	fp = cases['false_positive']
-	
-	#other measures we can derive
-	recall = 1.0*tp/(tp+fn)  # positive correct divided by total positive in the table
-	precision = 1.0*tp/(tp+fp) # positive correct divided by all positive predictions made
-	f1 = 2/(1/recall + 1/precision)
-	return f1
+    #the heart of the matrix
+    tp = cases['true_positive']
+    fn = cases['false_negative']
+    tn = cases['true_negative']
+    fp = cases['false_positive']
+    
+    #other measures we can derive
+    recall = 1.0*tp/(tp+fn)  # positive correct divided by total positive in the table
+    precision = 1.0*tp/(tp+fp) # positive correct divided by all positive predictions made
+    f1 = 2/(1/recall + 1/precision)
+    return f1
 
 def informedness(cases):
     tp = cases['true_positive']
@@ -36,3 +33,6 @@ def informedness(cases):
     specificty = 1.0*tn/(tn+fp) # negative correct divided by total negative in the table
     J = (recall + specificty) - 1
     return J
+
+def accuracy(cases):
+    return 1.0*(cases['true_negative'] + cases['true_positive'])/loan_table['Loan_Status'].count()
