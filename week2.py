@@ -35,4 +35,8 @@ def informedness(cases):
     return J
 
 def accuracy(cases):
-    return 1.0*(cases['true_negative'] + cases['true_positive'])/loan_table['Loan_Status'].count()
+    tp = cases['true_positive']
+    tn = cases['true_negative']
+    fp = cases['false_positive']
+    fn = cases['false_negative']
+    return 1.0*(tp + tn)/(tp+tn+fp+fn)
