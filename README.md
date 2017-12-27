@@ -13,7 +13,7 @@ The code in the library files is written in Python 2.7. You need that installed.
 ## Contributing
 
 The code is open (public) for pull requests. At the moment, I am not accepting push requests. If you see a bug,
-make a note of it on the wiki.
+make a note of it under issues tab.
 
 ## Authors
 
