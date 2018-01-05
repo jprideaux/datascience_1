@@ -1,3 +1,5 @@
+import week3
+
 def build_pred(column, branch):
 	return lambda row: row[column] == branch
 

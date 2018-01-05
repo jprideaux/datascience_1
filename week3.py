@@ -1,4 +1,4 @@
-#from week3_lib import *
+import week2
 
 def probabilities(counts):
     count_0 = 0 if 0 not in counts else counts[0]  #could have no 0 values
