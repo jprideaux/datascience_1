@@ -1,4 +1,4 @@
-
+from week2 import *
 from week3 import *
 
 def build_pred(column, branch):
